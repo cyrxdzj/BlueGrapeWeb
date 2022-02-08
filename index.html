@@ -25,7 +25,7 @@
             console.log(navigator.userAgent.toLowerCase());
             if(navigator.userAgent.toLowerCase().indexOf("micromessenger")!=-1)
             {
-                swal({text:"受微信限制，不能在这里下载安装包。请在默认浏览器中打开。"});
+                swal({text:"受微信限制，不能在这里下载安装包。请在手机浏览器中打开。"});
                 return;
             }
             window.open("https://gitee.com/cyrxdzj/BlueGrape/attach_files/961053/download/BlueGrape_1_1.0.1_2022-02-07.apk");
@@ -40,7 +40,11 @@
                 <img id="index-img-1" src="./img/index-img-1.png" class="index-img" onclick="javascript:exec_switch();is_click=true;">
                 <img id="index-img-2" src="./img/index-img-2.png" class="index-img" onclick="javascript:exec_switch();is_click=true;" hidden="true">
             </div>
-            <button class="btn btn-primary download-button" onclick="javascript:download();">下载</button>
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="javascript:download();">下载</button>
+                <button class="btn btn-secondary" onclick="javascript:window.open(`https://gitee.com/cyrxdzj/BlueGrape`);">源代码仓库</button>
+                <button class="btn btn-secondary" onclick="javascript:window.open(`https://gitee.com/cyrxdzj/BlueGrape/blob/master/README.md`);">查阅文档</button>
+            </div>
         </center>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
