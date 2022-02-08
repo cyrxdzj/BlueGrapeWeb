@@ -1,0 +1,23 @@
+.head-iframe
+{
+    height: 50px;
+    width: 100%;
+    margin: 0;
+}
+.index-title
+{
+    color: white;
+}
+.index-img
+{
+    height: calc(60vh);
+}
+.download-button
+{
+    margin-top: 10px;
+}
+.head-logo
+{
+    float: left;
+    height: 50px;
+}
