@@ -1,3 +1,8 @@
+.background
+{
+    background-image: url("../img/background-1.png");
+    background-size: cover;
+}
 .head-iframe
 {
     height: 50px;
@@ -10,7 +15,7 @@
 }
 .index-img
 {
-    height: calc(60vh);
+    height: calc(50vh);
 }
 .button-group
 {
@@ -33,6 +38,6 @@
 {
     .button-group button
     {
-        width: calc(10vw);
+        width: 200px;
     }
 }
