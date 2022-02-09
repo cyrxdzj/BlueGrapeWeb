@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="./css/common.css">
     </head>
     <style>
-        @media (min-width:0px) and (max-width:768px)
+        @media (min-width:0px) and (max-width:1000px)
         {
             .background
             {
@@ -15,7 +15,7 @@
                 background-size: cover;
             }
         }
-        @media (min-width:768px)
+        @media (min-width:1000px)
         {
             .background
             {
@@ -24,12 +24,22 @@
             }
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         var id=0;
         var is_click=false;
+        var download_url="";
         async function switch_img()
         {
             setInterval(function(){if(is_click){is_click=false;return;}exec_switch();},2000);
+        }
+        function get_latest_version()
+        {
+            axios.get("https://cyrxdzj.github.io/BlueGrapeWeb/apks.json").then(function(response){
+                console.log(response);
+                document.getElementById("download-button").innerText=`下载${response.data.latest_version}版本`;
+                download_url=response.data.apks[response.data.latest_version];
+            });
         }
         function exec_switch()
         {
@@ -46,8 +56,9 @@
                 swal({text:"受微信限制，不能在这里下载安装包。请在手机浏览器中打开。"});
                 return;
             }
-            window.open("https://gitee.com/cyrxdzj/BlueGrape/attach_files/961053/download/BlueGrape_1_1.0.1_2022-02-07.apk");
+            window.open(download_url);
         }
+        get_latest_version();
         switch_img();
     </script>
     <body class="background">
@@ -59,7 +70,7 @@
                 <img id="index-img-2" src="./img/index-img-2.png" class="index-img" onclick="javascript:exec_switch();is_click=true;" hidden="true">
             </div>
             <div class="button-group">
-                <button class="btn btn-primary" onclick="javascript:download();">下载</button>
+                <button class="btn btn-primary" onclick="javascript:download();" id="download-button">下载</button>
                 <button class="btn btn-secondary" onclick="javascript:window.open(`https://gitee.com/cyrxdzj/BlueGrape`);">源代码仓库</button>
                 <button class="btn btn-secondary" onclick="javascript:window.open(`https://gitee.com/cyrxdzj/BlueGrape/blob/master/README.md`);">查阅文档</button>
             </div>
