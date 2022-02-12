@@ -32,12 +32,28 @@
         width: calc(80vw);
         display: block;
         margin-top: 10px;
+        font-size: calc(1rem + 1.5vw);
     }
 }
 @media (min-width:1000px)
 {
     .button-group button
     {
-        width: 200px;
+        width: 300px;
+        margin: 10px;
+        display: block;
+    }
+    .image-div
+    {
+        display: inline;
+    }
+    .button-group
+    {
+        display: inline-block;
+        vertical-align: top;
+    }
+    .table-ready
+    {
+        display: table-row;
     }
 }
