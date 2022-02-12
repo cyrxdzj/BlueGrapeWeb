@@ -1,7 +1,8 @@
 {
-    "latest_version":"1.0.1",
+    "latest_version":"1.0.2",
     "apks":
     {
+        "1.0.2":"https://gitee.com/cyrxdzj/BlueGrape/attach_files/965023/download/BlueGrape_0002_1.0.2_2022-02-12.apk",
         "1.0.1":"https://gitee.com/cyrxdzj/BlueGrape/attach_files/963191/download/BlueGrape_0001_1.0.1_2022-02-07.apk"
     }
 }
