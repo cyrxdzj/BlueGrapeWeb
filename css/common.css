@@ -21,6 +21,10 @@
 {
     margin-top: 10px;
 }
+a
+{
+    text-decoration: none;
+}
 .head-logo
 {
     float: left;

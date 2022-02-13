@@ -11,10 +11,6 @@
         {
             color: white;
         }
-        .table-link
-        {
-            text-decoration: none;
-        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
@@ -25,10 +21,12 @@
                 var version_list=Object.keys(response.data.apks);
                 console.log(version_list);
                 var table_body_content="";
+                var regexp=new RegExp("\\d{4}-\\d{2}-\\d{2}");
                 var table_body=document.getElementById("table-body");
                 for(var i=0;i<version_list.length;i++)
                 {
-                    table_body_content+=`<tr><th><span class="table-text">${version_list[i]}${(version_list[i]==response.data.latest_version)?"（当前最新）":""}</span></th><th><a class="table-link" href="${response.data.apks[version_list[i]]}">点击这里</a></th></tr>`
+                    console.log(regexp.exec(response.data.apks[version_list[i]])[0]);
+                    table_body_content+=`<tr><th><span class="table-text">${version_list[i]}${(version_list[i]==response.data.latest_version)?"（当前最新）":""}</span></th><th><span class="table-text">${regexp.exec(response.data.apks[version_list[i]])[0]}</span></th><th><a href="${response.data.apks[version_list[i]]}">点击这里</a></th></tr>`
                 }
                 document.getElementById("table-body").innerHTML=table_body_content;
             });
@@ -43,6 +41,7 @@
                 <thead>
                     <tr>
                         <th style="min-width: 200px;"><span class="table-text">版本号</span></th>
+                        <th style="min-width: 200px;"><span class="table-text">APK构建日期</span></th>
                         <th style="width: auto;"><span class="table-text">下载地址</span></th>
                     </tr>
                 </thead>
