@@ -31,21 +31,48 @@ a
     height: 50px;
 }
 @media (min-width:0px) and (max-width:1000px) {
-    .button-group button
+    .dropend-button
+    {
+        width: calc(80vw - 50px);
+        margin-right: 0px;
+        margin-bottom: 10px;
+        font-size: calc(1rem + 1.5vw);
+        text-align: left;
+    }
+    .dropend-button-end
+    {
+        width: 50px;
+        margin-left: 0px;
+        margin-bottom: 10px;
+    }
+    .button-group-button
     {
         width: calc(80vw);
         display: block;
-        margin-top: 10px;
         font-size: calc(1rem + 1.5vw);
+        text-align: left;
     }
 }
 @media (min-width:1000px)
 {
-    .button-group button
+    .dropend-button
+    {
+        width: 275px;
+        margin-right: 0px;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    .dropend-button-end
+    {
+        width: 25px;
+        margin-left: 0px;
+        margin-bottom: 10px;
+    }
+    .button-group-button
     {
         width: 300px;
-        margin: 10px;
         display: block;
+        text-align: left;
     }
     .image-div
     {
